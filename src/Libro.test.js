@@ -1,23 +1,26 @@
-// Libro.test.js
-import Libro from './Libro'; // Asegúrate de ajustar la ruta según la ubicación real de tu archivo Libro.js
+import Libro from './Libro';
 
-describe('Libro', () => {
-  it('debe calcular el descuento correctamente para un libro nuevo', () => {
-    const libroNuevo = new Libro('Título', 100, 0);
-    const descuentoEsperado = 10; // Descuento esperado para un libro nuevo del 10%
-    expect(libroNuevo.calcularDescuento()).toBe(descuentoEsperado);
-  });
 
-  it('debe calcular el descuento correctamente para un libro antiguo', () => {
-    const libroAntiguo = new Libro('Otro Título', 20, 5);
-    const descuentoEsperado = 4; // Descuento esperado para un libro antiguo del 20%
-    expect(libroAntiguo.calcularDescuento()).toBe(descuentoEsperado);
-  });
+describe('Libro',()=>{
 
-  it('debe calcular el descuento correctamente para un libro con antigüedad intermedia', () => {
-    const libroIntermedio = new Libro('Libro Intermedio', 50, 3);
-    const descuentoEsperado = 7.5; // Descuento esperado para un libro con antigüedad intermedia del 15%
-    expect(libroIntermedio.calcularDescuento()).toBe(descuentoEsperado);
-  });
-  
+    it('Calcular el descuento correctamente para un libro nuevo',() =>{
+        const libroNuevo = new Libro('TestingBook',10,100,'2023-09-15');
+        const descuentoEsperado = 0;
+        expect(libroNuevo.obtenerDescuento()).toBe(descuentoEsperado);
+
+    });
+
+    it('Calcular el descuento correctamente para un libro antiguo',() =>{
+        const libroAntiguo = new Libro('TestingBook2',25,20,'2010-05-06');
+        const descuentoEsperado = 12.5;
+        expect(libroAntiguo.obtenerDescuento()).toBe(descuentoEsperado);
+    });
+
+    it('Calcular el descuento correctamente para un libro con antiguedad intermedia ',() =>{
+        const libroIntermedio = new Libro('testingBook3',60,50,'2021-05-06');
+        const descuentoEsperado = 6;
+        expect(libroIntermedio.obtenerDescuento()).toBe(descuentoEsperado);
+    });
+
+
 });
