@@ -25,6 +25,8 @@ class Libro {
     let anioLibro = fechaLibro.getFullYear();
     console.log("anioLibro", anioLibro);
 
+
+    
     let antiguedad = anioActual - anioLibro;
     if (antiguedad == 0)
       descuento = this.precio * this.DESCUENTO_LIBRO_NUEVO;
